@@ -1,21 +1,28 @@
-import AcmeLogo from '@/app/ui/acme-logo';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
+import AcmeLogo from "@/app/ui/acme-logo";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import { lusitana } from "./ui/fonts";
+import Image from "next/image";
+import desktopImage from "/public/hero-desktop.png";
+import mobileImage from "/public/hero-mobile.png";
 
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col p-6">
-      <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
-        {/* <AcmeLogo /> */}
+      <div className="flex h-20 shrink-0 items-end rounded-lg bg-emerald-300 border-emerald-600 border-2 p-4 md:h-52">
+        <AcmeLogo />
       </div>
       <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
-        <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
-          <p className={`text-xl text-gray-800 md:text-3xl md:leading-normal`}>
-            <strong>Welcome to Acme.</strong> This is the example for the{' '}
-            <a href="https://nextjs.org/learn/" className="text-blue-500">
-              Next.js Learn Course
-            </a>
-            , brought to you by Vercel.
+        <div className="flex flex-col justify-center gap-6 rounded-lg bg-stone-100 border-stone-600 border-[1px] px-6 py-10 md:w-2/5 md:px-20">
+          <p
+            className={`${lusitana.className}text-xl text-gray-800 md:text-3xl md:leading-normal font-semibold`}
+          >
+            Welcome to <span className="text-rose-900">FinTrack</span>
+          </p>
+          <p className={`${lusitana.className} text-lg`}>
+            FInTrack helps you chart a clear course for your finances. Easily
+            manage invoices and track your financial activities with our secure
+            and intuitive dashboard.
           </p>
           <Link
             href="/login"
@@ -26,6 +33,20 @@ export default function Page() {
         </div>
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
           {/* Add Hero Images Here */}
+          <Image
+            src={desktopImage}
+            height={1000}
+            width={760}
+            alt="Image of dashboard in desktop"
+            className=" hidden md:block"
+          />
+          <Image
+            src={mobileImage}
+            height={620}
+            width={560}
+            className="block md:hidden"
+            alt="Image of dashboard in mobile"
+          />
         </div>
       </div>
     </main>
