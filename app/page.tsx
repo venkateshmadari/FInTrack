@@ -5,7 +5,6 @@ import { lusitana } from "./ui/fonts";
 import Image from "next/image";
 import desktopImage from "/public/hero-desktop.png";
 import mobileImage from "/public/hero-mobile.png";
-
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col p-6">
